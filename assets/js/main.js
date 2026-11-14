@@ -131,7 +131,7 @@
         if (ev.origin !== 'https://player.vimeo.com') return;
         let d = ev.data; try { if (typeof d === 'string') d = JSON.parse(d); } catch { return; }
         if (d?.event === 'ready') f.contentWindow.postMessage(JSON.stringify({ method: 'addEventListener', value: 'playing' }), '*');
-        if (d?.event === 'playing') film.classList.add('is-on'); // poster stays until frames actually play
+        if (d?.event === 'playing') setTimeout(() => film.classList.add('is-on'), 600); // poster stays until frames actually play
       });
       film.appendChild(f);
     };

@@ -87,7 +87,7 @@ button { font: inherit; color: inherit; background: none; border: 0; padding: 0;
 .menu[hidden] { display: none; }
 .menu_veil { position: absolute; inset: 0; background: rgba(0,0,0,.5); opacity: 0; transition: opacity 0.3s ease-in-out; }
 .menu_panel { position: absolute; inset: 0 auto 0 0; width: 100%; color: #fff; transform: translateX(-100%); transition: transform 0.5s ease; overflow-y: auto; overscroll-behavior: contain; padding: 0.875rem 2rem 3rem; outline: none; }
-.menu_panel::before { content: ''; position: fixed; inset: 0; width: inherit; background: rgba(24, 32, 28, .847); backdrop-filter: blur(5px); -webkit-backdrop-filter: blur(5px); z-index: -1; }
+.menu_panel { background: rgba(24, 32, 28, .847); backdrop-filter: blur(5px); -webkit-backdrop-filter: blur(5px); }
 @media (min-width: 60rem) { .menu_panel { width: 50%; padding: 0.875rem 4rem 4rem; } }
 .menu.is-open .menu_panel { transform: translateX(0); }
 .menu.is-open .menu_veil { opacity: 1; }
