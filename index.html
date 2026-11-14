@@ -6,10 +6,10 @@
 <title>Borgarafl · Stálgrindarhús, sala og uppsetning síðan 2003</title>
 <meta name="description" content="Borgarafl selur og reisir stálgrindarhús. Flugskýli Icelandair, kísilverið í Helguvík, vöruhús Haga og frystiklefi Eskju. Síðan 2003.">
 <meta name="robots" content="noindex, nofollow">
-<meta name="theme-color" content="#0f1412">
+<meta name="theme-color" content="#131a17">
 <link rel="icon" href="assets/img/favicon-32.png" sizes="32x32" type="image/png">
 <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
-<link rel="preload" href="assets/fonts/ClashDisplay-Semibold.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/NunitoSans-Variable.woff2" as="font" type="font/woff2" crossorigin>
 <script>document.documentElement.classList.replace('no-js','js')</script>
 <script src="assets/vendor/focus-guard.js"></script>
 <link rel="stylesheet" href="assets/vendor/focus-guard.css">
@@ -18,141 +18,69 @@
 <body class="is-home">
 <a class="skip" href="#main">Fara í efni</a>
 <header class="hdr" data-hdr>
-  <div class="hdr_in">
-    <button class="hdr_menu" type="button" aria-expanded="false" aria-controls="drawer" data-menu-open><span class="burger" aria-hidden="true"><i></i><i></i></span><span class="hdr_lbl">Valmynd</span></button>
-    <a class="hdr_logo" href="" aria-label="Borgarafl, forsíða"><img src="assets/img/logo-white.png" alt="Borgarafl" width="848" height="518"></a>
-    <a class="hdr_tel" href="tel:+3546601701"><svg class="ic" viewBox="0 0 16 16" aria-hidden="true"><path d="M4.2 1.8l2 2.6-1.3 1.6a8.6 8.6 0 0 0 5.1 5.1l1.6-1.3 2.6 2-1.2 2.2C7.6 14.3 1.7 8.4 2 3z" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg><span class="hdr_lbl">660 1701</span></a>
+  <div class="wrapper hdr_in">
+    <button class="hdr_burger" type="button" aria-expanded="false" aria-controls="menu" data-menu-open><span class="lines" aria-hidden="true"><i></i><i></i><i></i></span><span class="hdr_lbl">Valmynd</span></button>
+    <a class="brand" href="" aria-label="Borgarafl, forsíða">
+      <span class="brand_word"><img src="assets/img/logo-word.png" alt="" width="848" height="105"></span>
+      <span class="brand_mark"><img src="assets/img/logo-mark.png" alt="" width="352" height="352"></span>
+    </a>
+    <a class="hdr_tel" href="tel:+3546601701"><span class="hdr_lbl">660 1701</span><svg class="ic" viewBox="0 0 16 16" aria-hidden="true"><path d="M4.2 1.8l2 2.6-1.3 1.6a8.6 8.6 0 0 0 5.1 5.1l1.6-1.3 2.6 2-1.2 2.2C7.6 14.3 1.7 8.4 2 3z" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg></a>
   </div>
 </header>
-<div class="drawer" id="drawer" role="dialog" aria-modal="true" aria-label="Valmynd" tabindex="-1" hidden>
-  <div class="drawer_scrim" data-menu-close></div>
-  <nav class="drawer_panel" tabindex="-1" aria-label="Aðalvalmynd">
-    <button class="drawer_close" type="button" data-menu-close aria-label="Loka valmynd"><span aria-hidden="true">×</span> Loka</button>
-    <ul class="drawer_list"><li><a href="" aria-current="page"><span class="drawer_n">01</span>Forsíða</a></li><li><a href="verkin/"><span class="drawer_n">02</span>Verkin</a></li><li><a href="thjonusta/"><span class="drawer_n">03</span>Þjónusta</a></li><li><a href="fyrirtaekid/"><span class="drawer_n">04</span>Fyrirtækið</a></li><li><a href="hafa-samband/"><span class="drawer_n">05</span>Hafa samband</a></li></ul>
-    <div class="drawer_foot">
-      <a href="tel:+3546601701">660 1701</a><a href="tel:+3546601704">660 1704</a>
-      <a href="mailto:freyr@borgarafl.is">freyr@borgarafl.is</a><a href="mailto:starri@borgarafl.is">starri@borgarafl.is</a>
+<div class="menu" id="menu" role="dialog" aria-modal="true" aria-label="Valmynd" hidden>
+  <div class="menu_veil" data-menu-close></div>
+  <nav class="menu_panel" tabindex="-1" aria-label="Aðalvalmynd">
+    <button class="menu_close" type="button" data-menu-close><span class="lines is-cross" aria-hidden="true"><i></i><i></i></span><span>Loka</span></button>
+    <div class="menu_grid">
+      <ul class="menu_list"><li><a href="" aria-current="page">Forsíða</a></li><li><a href="verkin/">Verkin</a></li><li><a href="thjonusta/">Þjónusta</a></li><li><a href="fyrirtaekid/">Fyrirtækið</a></li><li><a href="hafa-samband/">Hafa samband</a></li></ul>
+      <div class="menu_side">
+        <p class="menu_h">Verkin</p>
+        <ul><li><a href="verkin/flugskyli-icelandair/">Flugskýli Icelandair</a></li><li><a href="verkin/voruhus-haga/">Vöruhús Haga</a></li><li><a href="verkin/frystiklefi-eskju/">Frystiklefi Eskju</a></li><li><a href="verkin/kisilver-helguvik/">Kísilver í Helguvík</a></li></ul>
+        <p class="menu_h">Hafa samband</p>
+        <ul><li><a href="tel:+3546601701">660 1701</a></li><li><a href="tel:+3546601704">660 1704</a></li><li><a href="mailto:freyr@borgarafl.is">freyr@borgarafl.is</a></li><li><a href="mailto:starri@borgarafl.is">starri@borgarafl.is</a></li></ul>
+      </div>
     </div>
   </nav>
 </div>
 <main id="main">
 
-<section class="chapters" aria-label="Kynning">
-  <div class="chap is-first" data-chap>
-    <div class="chap_media"><img class="chap_img" width="1600" height="1200" src="assets/img/icelandair-1.webp" srcset="assets/img/icelandair-1-s.webp 760w, assets/img/icelandair-1.webp 1600w" sizes="100vw" alt="Stálgrind flugskýlis Icelandair í uppsetningu" fetchpriority="high" decoding="async"></div>
-    <div class="chap_body">
-      <h1 class="chap_t" data-lines><span class="ln"><span class="ln_i">Stálgrindarhús</span></span><span class="ln"><span class="ln_i">síðan 2003</span></span></h1>
-      <div class="chap_cta" data-rise><a class="pill " href="verkin/"><span>Verkin okkar</span><svg class="ic" viewBox="0 0 16 16" aria-hidden="true"><path d="M2 8h11M9 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></a></div>
-    </div>
-    <a class="chap_down" href="#span" aria-label="Skruna niður"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></a>
-  </div>
-  <div class="chap" data-chap>
-    <div class="chap_media"><img class="chap_img" width="1600" height="1200" src="assets/img/helguvik-1.webp" srcset="assets/img/helguvik-1-s.webp 760w, assets/img/helguvik-1.webp 1600w" sizes="100vw" alt="Kerskáli kísilversins í Helguvík, blá stálgrind og kranar" loading="lazy" decoding="async"></div>
-    <div class="chap_body">
-      <h2 class="chap_t" data-lines><span class="ln"><span class="ln_i">3.700 tonn af stáli,</span></span><span class="ln"><span class="ln_i">40 metrar upp</span></span></h2>
-      <div class="chap_cta" data-rise><a class="pill " href="verkin/kisilver-helguvik/"><span>Kísilverið í Helguvík</span><svg class="ic" viewBox="0 0 16 16" aria-hidden="true"><path d="M2 8h11M9 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></a></div>
-    </div>
-  </div>
-  <div class="chap" data-chap>
-    <div class="chap_media"><img class="chap_img" width="1600" height="1200" src="assets/img/eskja-1.webp" srcset="assets/img/eskja-1-s.webp 760w, assets/img/eskja-1.webp 1600w" sizes="100vw" alt="Stálgrind frystiklefa Eskju á Eskifirði" loading="lazy" decoding="async"></div>
-    <div class="chap_body">
-      <h2 class="chap_t" data-lines><span class="ln"><span class="ln_i">Frá innflutningi</span></span><span class="ln"><span class="ln_i">til síðasta bolta</span></span></h2>
-      <div class="chap_cta" data-rise><a class="pill " href="thjonusta/"><span>Þjónustan</span><svg class="ic" viewBox="0 0 16 16" aria-hidden="true"><path d="M2 8h11M9 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></a></div>
-    </div>
-  </div>
+<section class="hero" id="k1" data-snap>
+  <div class="hero_media"><img class="cover" width="1920" height="1080" src="assets/img/film-poster.webp" srcset="assets/img/film-poster-s.webp 760w, assets/img/film-poster.webp 1920w" sizes="100vw" alt="Loftmynd af stálgrindarhúsi Borgarafls í uppsetningu" loading="lazy" decoding="async"><div class="hero_film" data-film="478034598" aria-hidden="true"></div></div>
+  <div class="section-heading"><div class="section-heading-text">
+    <h1 class="hero_t">Stálgrindarhús síðan 2003</h1><a class="btn btn-accent" href="verkin/"><span>Verkin okkar</span><svg class="btn_next" viewBox="0 0 12 12" aria-hidden="true"><path d="M3.5 1.5L8 6l-4.5 4.5" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></a>
+  </div></div>
+  <a class="scroll-down" href="#" data-down aria-label="Skruna niður"><span class="round"><span class="arrow primera"></span><span class="arrow segunda"></span></span></a>
 </section>
-
-<section class="span" id="span" aria-labelledby="span-t" data-span>
-  <div class="span_stick">
-    <div class="span_head wrap">
-      <p class="label">Flugskýli Icelandair · Keflavíkurflugvöllur</p>
-      <h2 class="span_t" id="span-t">Breiðasta hús á Íslandi án innsúlna.</h2>
-    </div>
-    <div class="span_fig wrap">
-      <svg class="truss" viewBox="0 0 1200 420" role="img" aria-label="Teikning af stálgrind flugskýlisins, 96 metra frítt haf">
-        <g class="truss_ground"><line x1="0" y1="380" x2="1200" y2="380"/></g>
-        <g class="truss_members" data-truss></g>
-        <g class="truss_dim"><line class="dim_line" x1="60" y1="404" x2="1140" y2="404"/><line x1="60" y1="396" x2="60" y2="412"/><line x1="1140" y1="396" x2="1140" y2="412"/></g>
-        <g class="truss_hook" data-hook><line class="hook_cable" x1="820" y1="-300" x2="820" y2="300"/><rect class="hook_load" x="796" y="300" width="48" height="30" rx="2"/></g>
-      </svg>
-      <div class="span_read">
-        <p class="span_num"><span data-count="96">96</span><small>m</small></p>
-        <p class="span_cap">frítt haf, engin súla</p>
-      </div>
-      <p class="span_lift" data-lift><span>120 tonn</span> hífð í 26 metra hæð</p>
-    </div>
-  </div>
+<section class="hero" id="k2" data-snap>
+  <div class="hero_media"><img class="cover" width="1600" height="1200" src="assets/img/icelandair-1.webp" srcset="assets/img/icelandair-1-s.webp 760w, assets/img/icelandair-1.webp 1600w" sizes="100vw" alt="Stálgrind flugskýlis Icelandair í uppsetningu" loading="lazy" decoding="async"></div>
+  <div class="section-heading"><div class="section-heading-text">
+    <h2 class="hero_t">Breiðasta hús landsins án innsúlna</h2><a class="btn btn-accent" href="verkin/flugskyli-icelandair/"><span>Flugskýli Icelandair</span><svg class="btn_next" viewBox="0 0 12 12" aria-hidden="true"><path d="M3.5 1.5L8 6l-4.5 4.5" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></a>
+  </div></div>
+  <a class="scroll-down" href="#" data-down aria-label="Skruna niður"><span class="round"><span class="arrow primera"></span><span class="arrow segunda"></span></span></a>
 </section>
-
-<section class="intro wrap" aria-labelledby="intro-t">
-  <p class="label">Borgarafl ehf.</p>
-  <h2 class="intro_t" id="intro-t" data-lines><span class="ln"><span class="ln_i">Við höfum komið að flestum</span></span><span class="ln"><span class="ln_i">stærstu stálgrindarhúsum landsins.</span></span></h2>
-  <div class="intro_cols">
-    <p>Borgarafl var stofnað árið 2003 og hefur alla tíð verið leiðandi í uppsetningu stálgrindarhúsa á Íslandi, í samvinnu við aðalverktaka á borð við ÍAV, Ístak, ÞG verk og Eykt.</p>
-    <p>Við erum með sérþjálfaða starfsmenn til uppsetningar á stálgrindarhúsum og öflugan tækjakost, til að tryggja hraða og góða þjónustu.</p>
-  </div>
-  <ul class="nums" aria-label="Borgarafl í tölum">
-    <li><span class="nums_n" data-count="2003" data-sep="0">2003</span><span class="nums_l">Síðan</span></li><li><span class="nums_n" data-count="150" data-sep="0">150+</span><span class="nums_l">Hús reist</span></li><li><span class="nums_n" data-count="250000" data-sep="1">250.000</span><span class="nums_l">Fermetrar byggðir</span></li>
-  </ul>
+<section class="hero" id="k3" data-snap>
+  <div class="hero_media"><img class="cover" width="1600" height="1200" src="assets/img/eskja-1.webp" srcset="assets/img/eskja-1-s.webp 760w, assets/img/eskja-1.webp 1600w" sizes="100vw" alt="Stálgrind frystiklefa Eskju á Eskifirði" loading="lazy" decoding="async"></div>
+  <div class="section-heading"><div class="section-heading-text">
+    <h2 class="hero_t">Frá innflutningi til síðasta bolta</h2><a class="btn btn-accent" href="thjonusta/"><span>Þjónustan</span><svg class="btn_next" viewBox="0 0 12 12" aria-hidden="true"><path d="M3.5 1.5L8 6l-4.5 4.5" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></a>
+  </div></div>
+  <a class="scroll-down" href="#" data-down aria-label="Skruna niður"><span class="round"><span class="arrow primera"></span><span class="arrow segunda"></span></span></a>
 </section>
-
-<section class="work" aria-labelledby="work-t">
-  <div class="wrap work_head">
-    <h2 class="sec_t" id="work-t" data-lines><span class="ln"><span class="ln_i">Verkin okkar</span></span></h2>
-    <a class="pill is-ghost-dark" href="verkin/"><span>Öll verkin</span><svg class="ic" viewBox="0 0 16 16" aria-hidden="true"><path d="M2 8h11M9 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></a>
-  </div>
-  <ul class="grid wrap"><li class="tile" data-cat="flug">
-  <a href="verkin/flugskyli-icelandair/" class="tile_a">
-    <span class="tile_media"><img class="tile_img" width="1600" height="1200" src="assets/img/icelandair-1.webp" srcset="assets/img/icelandair-1-s.webp 760w, assets/img/icelandair-1.webp 1600w" sizes="(min-width: 760px) 50vw, 100vw" alt="Flugskýli Icelandair" loading="lazy" decoding="async"></span>
-    <span class="tile_meta"><span class="tile_cat">Flugskýli · Keflavíkurflugvöllur</span><span class="tile_t">Flugskýli Icelandair</span><span class="tile_f">20 m<i>/</i>um 96 m frítt haf</span><span class="tile_go"><svg class="ic" viewBox="0 0 16 16" aria-hidden="true"><path d="M2 8h11M9 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></span></span>
-  </a>
-</li><li class="tile" data-cat="voruhus">
-  <a href="verkin/voruhus-haga/" class="tile_a">
-    <span class="tile_media"><img class="tile_img" width="1600" height="1200" src="assets/img/hagar-1.webp" srcset="assets/img/hagar-1-s.webp 760w, assets/img/hagar-1.webp 1600w" sizes="(min-width: 760px) 50vw, 100vw" alt="Vöruhús Haga" loading="lazy" decoding="async"></span>
-    <span class="tile_meta"><span class="tile_cat">Vöruhús og kæling · Viðbygging</span><span class="tile_t">Vöruhús Haga</span><span class="tile_f">20 m<i>/</i>um 4.700 m²</span><span class="tile_go"><svg class="ic" viewBox="0 0 16 16" aria-hidden="true"><path d="M2 8h11M9 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></span></span>
-  </a>
-</li><li class="tile" data-cat="voruhus">
-  <a href="verkin/frystiklefi-eskju/" class="tile_a">
-    <span class="tile_media"><img class="tile_img" width="1600" height="1200" src="assets/img/eskja-1.webp" srcset="assets/img/eskja-1-s.webp 760w, assets/img/eskja-1.webp 1600w" sizes="(min-width: 760px) 50vw, 100vw" alt="Frystiklefi Eskju" loading="lazy" decoding="async"></span>
-    <span class="tile_meta"><span class="tile_cat">Vöruhús og kæling · Eskifjörður</span><span class="tile_t">Frystiklefi Eskju</span><span class="tile_f">16 m<i>/</i>um 4.700 m²</span><span class="tile_go"><svg class="ic" viewBox="0 0 16 16" aria-hidden="true"><path d="M2 8h11M9 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></span></span>
-  </a>
-</li><li class="tile" data-cat="idnadur">
-  <a href="verkin/kisilver-helguvik/" class="tile_a">
-    <span class="tile_media"><img class="tile_img" width="1600" height="1200" src="assets/img/helguvik-1.webp" srcset="assets/img/helguvik-1-s.webp 760w, assets/img/helguvik-1.webp 1600w" sizes="(min-width: 760px) 50vw, 100vw" alt="Kísilver í Helguvík" loading="lazy" decoding="async"></span>
-    <span class="tile_meta"><span class="tile_cat">Iðnaður · Reykjanesbær</span><span class="tile_t">Kísilver í Helguvík</span><span class="tile_f">40 m<i>/</i>3.700 tonn</span><span class="tile_go"><svg class="ic" viewBox="0 0 16 16" aria-hidden="true"><path d="M2 8h11M9 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></span></span>
-  </a>
-</li></ul>
-</section>
-
-<section class="partners wrap" aria-labelledby="partners-t">
-  <p class="label" id="partners-t">Við vinnum með</p>
-  <ul class="partners_list"><li>ÍAV</li><li>Ístak</li><li>ÞG verk</li><li>Eykt</li></ul>
-</section>
-
-<section class="cta" aria-labelledby="cta-t">
-  <div class="cta_media"><img class="chap_img" width="1600" height="1200" src="assets/img/boginn-1.webp" srcset="assets/img/boginn-1-s.webp 760w, assets/img/boginn-1.webp 1600w" sizes="100vw" alt="Bogadregin stálgrind í uppsetningu með krönum" loading="lazy" decoding="async"></div>
-  <div class="cta_body">
-    <h2 class="chap_t" id="cta-t" data-lines><span class="ln"><span class="ln_i">Ertu að fara að reisa?</span></span></h2>
-    <p class="cta_p">Hringdu í Frey eða Starra og fáðu mat á verkinu.</p>
-    <div class="cta_btns" data-rise><a class="pill " href="tel:+3546601701"><span>660 1701</span><svg class="ic" viewBox="0 0 16 16" aria-hidden="true"><path d="M2 8h11M9 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></a><a class="pill " href="tel:+3546601704"><span>660 1704</span><svg class="ic" viewBox="0 0 16 16" aria-hidden="true"><path d="M2 8h11M9 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></a></div>
-  </div>
-</section>
+<nav class="fp-nav" aria-label="Kaflar"><ul><li><a href="#k1" aria-label="Kafli 1" class="is-active"><span></span></a></li><li><a href="#k2" aria-label="Kafli 2"><span></span></a></li><li><a href="#k3" aria-label="Kafli 3"><span></span></a></li></ul></nav>
 </main>
-<footer class="ftr">
-  <div class="wrap">
-    <a class="ftr_logo" href="" aria-label="Borgarafl, forsíða"><img src="assets/img/logo-white.png" alt="Borgarafl" width="848" height="518" loading="lazy"></a>
-    <div class="ftr_cols">
-      <div><p class="ftr_h">Verkin</p><ul><li><a href="verkin/flugskyli-icelandair/">Flugskýli Icelandair</a></li><li><a href="verkin/voruhus-haga/">Vöruhús Haga</a></li><li><a href="verkin/frystiklefi-eskju/">Frystiklefi Eskju</a></li><li><a href="verkin/kisilver-helguvik/">Kísilver í Helguvík</a></li><li><a href="verkin/#fyrri-verk">Fyrri verk</a></li></ul></div>
-      <div><p class="ftr_h">Þjónusta</p><ul><li><a href="thjonusta/">Sala á stálgrindarhúsum</a></li><li><a href="thjonusta/">Uppsetning stálgrinda</a></li><li><a href="thjonusta/">Sérþjálfaður mannskapur</a></li><li><a href="thjonusta/">Tækjakostur</a></li></ul></div>
-      <div><p class="ftr_h">Fyrirtækið</p><ul><li><a href="fyrirtaekid/">Sagan síðan 2003</a></li><li><a href="fyrirtaekid/#samstarf">Samstarfsaðilar</a></li><li><a href="hafa-samband/">Hafa samband</a></li></ul></div>
-      <div><p class="ftr_h">Hafa samband</p><ul><li>Miðhraun 22b, 210 Garðabær</li><li><a href="tel:+3546601701">660 1701</a></li><li><a href="tel:+3546601704">660 1704</a></li><li><a href="mailto:freyr@borgarafl.is">freyr@borgarafl.is</a></li><li><a href="mailto:starri@borgarafl.is">starri@borgarafl.is</a></li></ul></div>
+<footer class="ftr" data-snap>
+  <div class="ftr_logo wrapper"><a href="" aria-label="Borgarafl, forsíða"><img src="assets/img/logo-white.png" alt="Borgarafl" width="848" height="518" loading="lazy"></a></div>
+  <div class="wrapper ftr_in">
+    <div class="ftr_content">
+      <div class="ftr_menu"><h3>Verkin</h3><ul><li><a href="verkin/?flokkur=flug">Flugskýli</a></li><li><a href="verkin/?flokkur=idnadur">Iðnaður</a></li><li><a href="verkin/?flokkur=voruhus">Vöruhús og kæling</a></li></ul></div>
+      <div class="ftr_menu"><h3>Verkefni</h3><ul><li><a href="verkin/flugskyli-icelandair/">Flugskýli Icelandair</a></li><li><a href="verkin/voruhus-haga/">Vöruhús Haga</a></li><li><a href="verkin/frystiklefi-eskju/">Frystiklefi Eskju</a></li><li><a href="verkin/kisilver-helguvik/">Kísilver í Helguvík</a></li></ul></div>
+      <div class="ftr_menu"><h3>Þjónusta</h3><ul><li><a href="thjonusta/">Sala á stálgrindarhúsum</a></li><li><a href="thjonusta/">Uppsetning stálgrinda</a></li><li><a href="thjonusta/">Sérþjálfaður mannskapur</a></li><li><a href="thjonusta/">Tækjakostur</a></li></ul></div>
+      <div class="ftr_menu"><h3><a href="fyrirtaekid/">Fyrirtækið</a></h3></div>
+      <div class="ftr_menu ftr_side"><ul><li><a href="fyrirtaekid/#saga">Sagan</a></li><li><a href="fyrirtaekid/#myndband">Myndband</a></li><li><a href="hafa-samband/">Hafa samband</a></li></ul>
+        <h3 class="ftr_call">Hringdu</h3><ul><li><a href="tel:+3546601701">660 1701</a></li><li><a href="tel:+3546601704">660 1704</a></li></ul></div>
     </div>
-    <div class="ftr_legal"><span>© 2026 Borgarafl ehf. · kt. 690103-2490</span><a class="sndr" href="https://sndrstudio.is" rel="noopener">Hugmynd að nýjum vef · SNDR Studio</a></div>
+    <div class="ftr_info"><div><p>© 2026 Borgarafl ehf.</p><p>kt. 690103-2490</p><p>Miðhraun 22b, 210 Garðabær</p></div><a class="sndr" href="https://sndrstudio.is" rel="noopener">Hugmynd að nýjum vef · SNDR Studio</a></div>
   </div>
 </footer>
-<script src="assets/vendor/gsap.min.js" defer></script>
-<script src="assets/vendor/ScrollTrigger.min.js" defer></script>
-<script src="assets/vendor/lenis.min.js" defer></script>
 <script src="assets/js/main.js" defer></script>
 </body>
 </html>
