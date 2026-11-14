@@ -78,7 +78,12 @@ button { font: inherit; color: inherit; background: none; border: 0; padding: 0;
 .hdr.on-light { color: var(--ink); }
 .hdr.on-light .hdr_burger, .hdr.on-light .hdr_tel { text-shadow: none; }
 .hdr.on-light .lines i { box-shadow: none; }
-.hdr.on-light .brand_mark, .hdr.on-light .brand_word, .hdr.on-light .hdr_tel .ic { filter: invert(1) brightness(.35); }
+/* logo is never recoloured: over light sections swap to their own dark wordmark (borgar.png); the round mark reads on both */
+.brand_word .w-dark { display: none; }
+.hdr.on-light .brand_word { filter: none; }
+.hdr.on-light .brand_word .w-light { display: none; }
+.hdr.on-light .brand_word .w-dark { display: block; }
+.hdr.on-light .brand_mark { filter: none; }
 .hdr.on-light .hdr_in::before { background: #cfcfcf; }
 .menu-open .hdr { opacity: 0; pointer-events: none; }
 
@@ -290,3 +295,4 @@ a.overview-item:focus-visible .overview-item-image img { transform: scale(1.05);
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation: none !important; transition-duration: .01ms !important; scroll-behavior: auto !important; }
 }
+.hdr.on-light .hdr_tel .ic { filter: none; }
