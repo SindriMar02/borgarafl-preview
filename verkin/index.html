@@ -15,7 +15,7 @@
 <script>var d=document.documentElement;d.classList.replace('no-js','js');if(!matchMedia('(prefers-reduced-motion: reduce)').matches){d.classList.add('from-wipe');try{if(!sessionStorage.getItem('bwipe'))d.classList.add('is-load')}catch(e){d.classList.add('is-load')}}</script>
 <script src="../assets/vendor/focus-guard.js"></script>
 <link rel="stylesheet" href="../assets/vendor/focus-guard.css">
-<link rel="stylesheet" href="../assets/css/site.css?v=mwh8yduv">
+<link rel="stylesheet" href="../assets/css/site.css?v=mwh9sbnx">
 </head>
 <body class="is-inner is-light">
 <a class="skip" href="#main">Fara í efni</a>
@@ -25,8 +25,19 @@
     <span class="brand_full"><img class="l-light" src="../assets/img/logo-white.png" alt="" width="848" height="518"><img class="l-dark" src="../assets/img/logo.png" alt="" width="848" height="518"></span>
     <span class="brand_mark"><img src="../assets/img/logo-mark.png" alt="" width="352" height="352"></span>
   </a>
-  <nav class="nav" aria-label="Aðalvalmynd"><ul><li class="is-idx"><a class="link" href="../" data-wipe>Forsíða</a><span class="cm">,</span></li><li class=""><a class="link is-cur" href="../verkin/" aria-current="page" data-wipe>Verkin</a><span class="cm">,</span></li><li class=""><a class="link" href="../thjonusta/" data-wipe>Þjónusta</a><span class="cm">,</span></li><li class=""><a class="link" href="../fyrirtaekid/" data-wipe>Fyrirtækið</a><span class="cm">,</span></li><li class=""><a class="link" href="../hafa-samband/" data-wipe>Hafa samband</a></li></ul></nav>
+  <nav class="nav" aria-label="Aðalvalmynd"><ul class="nav_list"><li><a class="link is-cur" href="../verkin/" aria-current="page" data-wipe>Verkin</a></li><li><a class="link" href="../thjonusta/" data-wipe>Þjónusta</a></li><li><a class="link" href="../fyrirtaekid/" data-wipe>Fyrirtækið</a></li></ul>
+    <a class="nav_tel" href="tel:+3546601701"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M5.2 1.5 3.3 1.6c-.9.1-1.6.9-1.5 1.8.5 5.6 5.2 10.3 10.8 10.8.9.1 1.7-.6 1.8-1.5l.1-1.9a1 1 0 0 0-.7-1l-2.4-.8a1 1 0 0 0-1 .3l-.9 1a7.6 7.6 0 0 1-3.4-3.4l1-.9a1 1 0 0 0 .3-1l-.8-2.4a1 1 0 0 0-1-.7Z" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/></svg>660 1701</a>
+    <a class="nav_cta" href="../hafa-samband/" data-wipe>Hafa samband</a>
+  </nav>
+  <button type="button" class="menu_btn" data-menu-btn aria-expanded="false" aria-controls="menu"><span class="menu_lbl" data-menu-lbl>Valmynd</span><span class="menu_ic" aria-hidden="true"><i></i><i></i></span></button>
 </header>
+<div class="menu" id="menu" tabindex="-1" data-menu hidden>
+  <nav aria-label="Valmynd"><ul class="menu_list"><li style="--d:0"><a class="menu_a" href="../" data-wipe><span>Forsíða</span><i aria-hidden="true">01</i></a></li><li style="--d:1"><a class="menu_a is-cur" href="../verkin/" aria-current="page" data-wipe><span>Verkin</span><i aria-hidden="true">02</i></a></li><li style="--d:2"><a class="menu_a" href="../thjonusta/" data-wipe><span>Þjónusta</span><i aria-hidden="true">03</i></a></li><li style="--d:3"><a class="menu_a" href="../fyrirtaekid/" data-wipe><span>Fyrirtækið</span><i aria-hidden="true">04</i></a></li><li style="--d:4"><a class="menu_a" href="../hafa-samband/" data-wipe><span>Hafa samband</span><i aria-hidden="true">05</i></a></li></ul></nav>
+  <div class="menu_foot" style="--d:5">
+    <a class="menu_tel" href="tel:+3546601701"><span class="mute">Freyr</span> 660 1701</a><a class="menu_tel" href="tel:+3546601704"><span class="mute">Víðir</span> 660 1704</a>
+    <a class="menu_mail" href="mailto:freyr@borgarafl.is">freyr@borgarafl.is</a><a class="menu_mail" href="mailto:starri@borgarafl.is">starri@borgarafl.is</a>
+  </div>
+</div>
 <main id="main">
 
 <section class="wpage" data-view="grid">
@@ -75,6 +86,6 @@
 <script src="../assets/vendor/gsap.min.js" defer></script>
 <script src="../assets/vendor/ScrollTrigger.min.js" defer></script>
 <script src="../assets/vendor/lenis.min.js" defer></script>
-<script src="../assets/js/main.js?v=mwh8yduv" defer></script>
+<script src="../assets/js/main.js?v=mwh9sbnx" defer></script>
 </body>
 </html>

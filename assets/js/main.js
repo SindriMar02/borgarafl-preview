@@ -31,19 +31,63 @@
     gsap.ticker.lagSmoothing(0);
   }
 
-  /* ---------- header: lockup → round mark; light/dark over dark sections ---------- */
+  /* ---------- header: lockup → round mark; light/dark by section; solid bar once scrolled; hides on the way down ---------- */
   const hdr = document.querySelector('[data-hdr]');
+  const root = document.documentElement;
   const darks = () => document.querySelectorAll('[data-theme="dark"]');
+  let lastY = scrollY;
   const paintHeader = () => {
     if (!hdr) return;
-    hdr.classList.toggle('is-small', scrollY > 40);
-    const probe = 26; let dark = false;
+    const y = scrollY, dy = y - lastY; lastY = y;
+    hdr.classList.toggle('is-small', y > 40);
+    hdr.classList.toggle('is-bar', y > 40);
+    if (!root.classList.contains('menu-open') && !hdr.contains(document.activeElement)) {
+      if (dy > 4 && y > 320) hdr.classList.add('is-hidden');
+      else if (dy < -4 || y < 120) hdr.classList.remove('is-hidden');
+    }
+    const probe = 30; let dark = false;
     for (const el of darks()) { const r = el.getBoundingClientRect(); if (r.top <= probe && r.bottom > probe) { dark = true; break; } }
     hdr.classList.toggle('on-dark', dark);
   };
   addEventListener('scroll', paintHeader, { passive: true });
   addEventListener('resize', paintHeader);
+  hdr?.addEventListener('focusin', () => hdr.classList.remove('is-hidden'));
   paintHeader();
+
+  /* ---------- menu (tablet + phone): pointer open focuses the panel, keyboard open the first link (focus-guard rule) ---------- */
+  const mBtn = document.querySelector('[data-menu-btn]');
+  const menu = document.querySelector('[data-menu]');
+  const mLbl = document.querySelector('[data-menu-lbl]');
+  let mTimer = 0;
+  const menuFocusables = () => [mBtn, ...menu.querySelectorAll('a[href]')];
+  const openMenu = (viaKey) => {
+    clearTimeout(mTimer); menu.hidden = false; void menu.offsetWidth;
+    root.classList.add('menu-open'); hdr.classList.remove('is-hidden');
+    mBtn.setAttribute('aria-expanded', 'true'); mLbl.textContent = 'Loka';
+    lenis?.stop(); document.body.style.overflow = 'hidden';
+    (viaKey ? menu.querySelector('a[href]') : menu).focus({ preventScroll: true });
+  };
+  const closeMenu = (refocus) => {
+    if (!root.classList.contains('menu-open')) return;
+    root.classList.remove('menu-open');
+    mBtn.setAttribute('aria-expanded', 'false'); mLbl.textContent = 'Valmynd';
+    lenis?.start(); document.body.style.overflow = '';
+    mTimer = setTimeout(() => { menu.hidden = true; }, 460);
+    if (refocus) mBtn.focus({ preventScroll: true });
+  };
+  if (mBtn && menu) {
+    mBtn.addEventListener('click', (e) => root.classList.contains('menu-open') ? closeMenu(e.detail === 0) : openMenu(e.detail === 0));
+    addEventListener('keydown', (e) => {
+      if (!root.classList.contains('menu-open')) return;
+      if (e.key === 'Escape') { e.preventDefault(); closeMenu(true); return; }
+      if (e.key !== 'Tab') return;
+      const f = menuFocusables(), i = f.indexOf(document.activeElement);
+      if (e.shiftKey && i <= 0) { e.preventDefault(); f[f.length - 1].focus(); }
+      else if (!e.shiftKey && (i === f.length - 1 || i === -1)) { e.preventDefault(); f[i === -1 ? 0 : 0].focus(); }
+    });
+    matchMedia('(min-width: 960px)').addEventListener('change', (m) => { if (m.matches) closeMenu(false); });
+    addEventListener('pageshow', () => closeMenu(false));
+  }
 
   /* ---------- line splitting (K SplitText "linereveal") ---------- */
   const splitLines = (el) => {
