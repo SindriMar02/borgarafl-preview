@@ -121,9 +121,14 @@
     };
     hero.querySelector('[data-prev]').addEventListener('click', () => go(i - 1));
     hero.querySelector('[data-next]').addEventListener('click', () => go(i + 1));
-    let x0 = null;
-    sl.addEventListener('pointerdown', (e) => { x0 = e.clientX; });
-    sl.addEventListener('pointerup', (e) => { if (x0 !== null && Math.abs(e.clientX - x0) > 40) go(i + (e.clientX < x0 ? 1 : -1)); x0 = null; });
+    // swipe anywhere on the hero (title included); touch via touch events because iOS cancels pointer events on pan
+    let x0 = null, y0 = null;
+    const start = (x, y) => { x0 = x; y0 = y; };
+    const end = (x, y) => { if (x0 !== null && Math.abs(x - x0) > 40 && Math.abs(x - x0) > Math.abs(y - y0)) go(i + (x < x0 ? 1 : -1)); x0 = null; };
+    hero.addEventListener('touchstart', (e) => start(e.touches[0].clientX, e.touches[0].clientY), { passive: true });
+    hero.addEventListener('touchend', (e) => end(e.changedTouches[0].clientX, e.changedTouches[0].clientY), { passive: true });
+    hero.addEventListener('pointerdown', (e) => { if (e.pointerType === 'mouse') start(e.clientX, e.clientY); });
+    hero.addEventListener('pointerup', (e) => { if (e.pointerType === 'mouse') end(e.clientX, e.clientY); });
     addEventListener('resize', () => { track.style.transition = 'none'; go(i); requestAnimationFrame(() => { track.style.transition = ''; }); });
     go(0);
   });
