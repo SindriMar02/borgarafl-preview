@@ -170,7 +170,7 @@ button { font: inherit; color: inherit; background: none; border: 0; padding: 0;
 .overview-items .wrapper { display: grid; grid-template-columns: 1fr; gap: 2rem; }
 @media (min-width: 48rem) { .overview-items .wrapper { grid-template-columns: repeat(2, 1fr); } }
 /* MHB .overview-item: aspect 1/0.7, padding 1.875rem, plum gradient to 98%, drop-shadow; image transform 1s ease-in-out */
-.overview-item { position: relative; display: flex; align-items: flex-end; aspect-ratio: 1 / 0.7; padding: 1.875rem; overflow: hidden; text-decoration: none; box-shadow: 0.25rem 0.625rem 0.625rem rgba(0,0,0,.329); } /* MHB uses filter:drop-shadow; iOS Safari left re-shown filtered cards blank (15 Nov), box-shadow is identical on a rectangle */
+.overview-item { position: relative; display: flex; align-items: flex-end; aspect-ratio: 1 / 0.7; padding: 1.875rem; overflow: hidden; text-decoration: none; box-shadow: 0.25rem 0.625rem 0.625rem rgba(0,0,0,.329); } /* MHB: filter drop-shadow .25rem .625rem .625rem; box-shadow gives the same look on a rectangle and is cheaper to paint */
 .overview-item::before { content: ''; position: absolute; inset: 0; z-index: 1; background: linear-gradient(180deg, rgba(255,255,255,0) 0%, rgb(24, 32, 28) 98%); transition: all 0.2s ease-in-out; }
 .overview-item-image { position: absolute; inset: 0; overflow: hidden; }
 .overview-item-image img { transition: transform 1s ease-in-out; }
@@ -179,6 +179,7 @@ button { font: inherit; color: inherit; background: none; border: 0; padding: 0;
 .overview-item-text p { margin: 0; font-size: .9375rem; line-height: 1.5; opacity: .85; max-width: 34rem; }
 @media (hover: hover) { a.overview-item:hover .overview-item-image img { transform: scale(1.05); } a.overview-item:hover::before { opacity: .85; } }
 a.overview-item:focus-visible .overview-item-image img { transform: scale(1.05); }
+.overview-item[hidden] { display: none; } /* display:flex above overrides the hidden attribute: filtered-out cards stayed in the grid as blank gaps */
 .overview-item.is-out { opacity: 0; transform: translateY(3.125rem); transition: opacity .3s ease, transform .3s ease; }
 .overview-item.is-in { transition: opacity .6s ease, transform .6s var(--ease); }
 .earlier { margin-top: 3rem; font-size: .9375rem; color: #444; }
