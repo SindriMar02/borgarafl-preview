@@ -51,7 +51,8 @@ sup { font-size: 12px; vertical-align: top; letter-spacing: -0.02em; font-family
 /* links: underline draws (K .link) */
 .link { position: relative; display: inline-block; }
 .link::after { content: ''; position: absolute; left: 0; right: 0; bottom: -1px; height: 1px; background: currentColor; transform: scaleX(0); transform-origin: right; transition: transform .6s var(--ease); }
-.link:hover::after, .link.is-cur::after { transform: scaleX(1); transform-origin: left; }
+.link.is-cur::after, .link:focus-visible::after { transform: scaleX(1); transform-origin: left; }
+@media (hover: hover) and (pointer: fine) { .link:hover::after { transform: scaleX(1); transform-origin: left; } }
 
 /* ---------- header ---------- */
 .hdr { position: fixed; inset: 0 0 auto 0; z-index: 50; display: flex; justify-content: space-between; align-items: flex-start; padding: max(var(--m), env(safe-area-inset-top)) max(var(--m), env(safe-area-inset-right)) var(--m) max(var(--m), env(safe-area-inset-left)); pointer-events: none; color: var(--bk); }
