@@ -60,43 +60,11 @@
     });
   }
 
-  /* ---------- MHB fullPage autoScrolling (desktop >=1024 wide, >600 tall, fine pointer): one chapter per wheel/key,
-     0.7 s ease (#fullpage transform .7s ease). Phones and reduced motion keep native scroll, as MHB's responsiveWidth does. ---------- */
-  const fpMq = matchMedia('(min-width: 64rem) and (min-height: 37.5rem) and (pointer: fine)');
-  const stops = [...document.querySelectorAll('[data-snap]')];
-  const isHome = document.body.classList.contains('is-home');
-  const fpOn = () => isHome && fpMq.matches && !reduce.matches;
-  const bez = (x1, y1, x2, y2) => (t) => { // cubic-bezier solver for 'ease'
-    let a = t; for (let i = 0; i < 8; i++) { const x = 3 * (1 - a) ** 2 * a * x1 + 3 * (1 - a) * a * a * x2 + a ** 3 - t; const d = 3 * (1 - a) ** 2 * x1 + 6 * (1 - a) * a * (x2 - x1) + 3 * a * a * (1 - x2); if (Math.abs(d) < 1e-6) break; a -= x / d; }
-    return 3 * (1 - a) ** 2 * a * y1 + 3 * (1 - a) * a * a * y2 + a ** 3; };
-  const ease = bez(0.25, 0.1, 0.25, 1);
-  let anim = false, animEnd = 0;
-  const topOf = (el) => (el.matches('.ftr') ? document.documentElement.scrollHeight - innerHeight : el.getBoundingClientRect().top + scrollY);
-  const current = () => { const y = scrollY + 4; let i = 0; stops.forEach((s, k) => { if (topOf(s) <= y) i = k; }); return i; };
+  /* ---------- section jumps (scroll-down ring, chapter dots). Native scroll everywhere: MHB's fullPage wheel-stepping
+     was rebuilt on 14 Nov and swallowed slow trackpad drags (page stuck on chapter 1), so it was removed 15 Nov. ---------- */
   function goTo(el) {
-    const to = Math.round(topOf(el));
-    if (!fpOn()) { scrollTo({ top: to, behavior: reduce.matches ? 'auto' : 'smooth' }); return; }
-    const from = scrollY; const t0 = performance.now(); anim = true;
-    const step = (now) => { const p = Math.min(1, (now - t0) / 700); scrollTo(0, from + (to - from) * ease(p)); if (p < 1) requestAnimationFrame(step); else { anim = false; animEnd = performance.now(); } };
-    requestAnimationFrame(step);
-  }
-  if (isHome && stops.length) {
-    let lastWheel = 0;
-    addEventListener('wheel', (e) => {
-      if (!fpOn() || isOpen || e.ctrlKey) return;
-      e.preventDefault();
-      const now = performance.now(); const gap = now - lastWheel; lastWheel = now;
-      // trackpad momentum keeps firing: a new step needs the last one finished and a pause or a fresh, harder flick
-      if (anim || now - animEnd < 450 || (gap < 160 && Math.abs(e.deltaY) < 30) || Math.abs(e.deltaY) < 4) return;
-      const i = current() + (e.deltaY > 0 ? 1 : -1);
-      if (i >= 0 && i < stops.length) goTo(stops[i]);
-    }, { passive: false });
-    addEventListener('keydown', (e) => {
-      if (!fpOn() || isOpen || e.target.closest('input, textarea, select, [contenteditable]')) return;
-      const dir = { ArrowDown: 1, PageDown: 1, ' ': e.shiftKey ? -1 : 1, ArrowUp: -1, PageUp: -1, Home: -9, End: 9 }[e.key];
-      if (!dir) return; e.preventDefault(); if (anim) return;
-      goTo(stops[Math.max(0, Math.min(stops.length - 1, current() + dir))]);
-    });
+    const to = el.matches('.ftr') ? document.documentElement.scrollHeight - innerHeight : el.getBoundingClientRect().top + scrollY;
+    scrollTo({ top: Math.round(to), behavior: reduce.matches ? 'auto' : 'smooth' });
   }
 
   /* ---------- scroll-down ring: next section (MHB .scroll / fullpage_api.moveSectionDown) ---------- */
